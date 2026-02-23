@@ -1,33 +1,80 @@
-# Beyondtheshadows
-Official website for Beyond the Shadows manifesto.
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond the Shadows | The Manifesto of the Unfinished Woman</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --gold: #c5a059;
             --dark: #1a1a1a;
-            --light: #f4f1ea;
-            --shadow-gray: #4a4a4a;
+            --light: #fdfaf5;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
 
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
         /* Hero Section */
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1507502707541-f369a3b18502?auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -35,158 +82,212 @@ Official website for Beyond the Shadows manifesto.
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            color: var(--white);
             padding: 20px;
         }
 
         header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin: 0;
         }
 
         header p {
-            font-style: italic;
             font-size: 1.2rem;
-            max-width: 700px;
+            max-width: 600px;
+            font-style: italic;
+            margin-top: 15px;
         }
 
-        .cta-btn {
+        .btn {
             margin-top: 30px;
             padding: 15px 40px;
             background-color: var(--gold);
-            color: white;
+            color: var(--white);
             text-decoration: none;
             font-weight: bold;
+            border-radius: 2px;
+            transition: 0.4s;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            border-radius: 5px;
+            letter-spacing: 2px;
         }
 
-        .cta-btn:hover {
-            background-color: #b38f4a;
+        .btn:hover {
+            background-color: var(--dark);
         }
 
-        /* Philosophy Section */
-        .philosophy {
-            padding: 80px 20px;
+        /* Sections General */
+        section {
+            padding: 100px 10%;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
         }
 
-        .philosophy h2 {
-            color: var(--gold);
-            font-size: 2.5rem;
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
         }
 
-        /* Business Offerings */
-        .services {
+        /* Services Grid */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 50px 10%;
-            background-color: white;
+            gap: 40px;
         }
 
         .card {
-            padding: 30px;
-            border: 1px solid #ddd;
-            text-align: center;
-            transition: 0.3s;
+            background: var(--white);
+            padding: 50px 30px;
+            border-radius: 5px;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid transparent;
         }
 
         .card:hover {
             border-color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
 
         .card i {
             font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        /* Newsletter */
-        .newsletter {
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Book Section */
+        #book {
+            background-color: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+            text-align: left;
+        }
+
+        .book-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .book-img img {
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 30px 30px 0 var(--gold);
+        }
+
+        .book-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Contact Section */
+        #contact {
             background-color: var(--dark);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
+            color: var(--white);
         }
 
-        .newsletter input {
-            padding: 15px;
-            width: 300px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 10px;
+        #contact h2 {
+            color: var(--gold);
         }
 
         /* Footer */
         footer {
-            padding: 40px;
+            padding: 60px;
+            background: #111;
+            color: #777;
             text-align: center;
-            font-size: 0.9rem;
-            color: var(--shadow-gray);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .newsletter input { width: 90%; }
+            header h1 { font-size: 3rem; }
+            nav ul { display: none; } /* Mobile menu can be added later */
+            #book { text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
+        <a href="#home" class="logo">Beyond the Shadows</a>
+        <ul>
+            <li><a href="#about">The Manifesto</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#book">The Book</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
         <h1>Beyond the Shadows</h1>
         <p>"You were not created to be a masterpiece on someone else's wall. It is time to reclaim the lead."</p>
-        <a href="#join" class="cta-btn">Join the Movement</a>
+        <a href="#book" class="btn">Get the Manifesto</a>
     </header>
 
-    <section class="philosophy">
-        <h2>The Manifesto of the Unfinished Woman</h2>
-        <p>I am not a 10/10. I am a work in progress. But here is the secret: <strong>I can lead whilst I am learning.</strong> I can build an empire even when I feel like a 3/10. My power is not in reaching a destination; it is in the courage to walk through the fire.</p>
+    <section id="about">
+        <h2>The Unfinished Woman</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
+            I can lead whilst I am learning. I can build an empire even when I feel like a 3/10. 
+            This is a space for the woman who refuses to wait for perfection before she claims her voice. 
+            We are navigating the shadows of cultural expectations together.
+        </p>
     </section>
 
-    <section class="services">
-        <div class="card">
-            <i class="fas fa-dove"></i>
-            <h3>The Hima Sanctuary</h3>
-            <p>A private community for women to find their voice in the silence. Weekly reflections and sacred support.</p>
-            <a href="#" style="color: var(--gold);">Learn More →</a>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-book-open"></i>
-            <h3>The Shadow Workbook</h3>
-            <p>Master the exercises from the book. A guided digital journey to unlearn societal expectations (Aib).</p>
-            <a href="#" style="color: var(--gold);">Shop Now →</a>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-crown"></i>
-            <h3>Signature Coaching</h3>
-            <p>1-on-1 mentorship to help you CONDUCT the "Sacred Drop" and reclaim your intellectual power.</p>
-            <a href="#" style="color: var(--gold);">Apply Now →</a>
+    <section id="services">
+        <h2>Your Path to Reclamation</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-dove"></i>
+                <h3>Hima Sanctuary</h3>
+                <p>A protected community for women to find their voice in the silence. Find your tribe of "Silent Warriors."</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-gem"></i>
+                <h3>Private Coaching</h3>
+                <p>One-on-one sessions to help you set boundaries, unlearn tribal shame, and build your independence.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-pen-nib"></i>
+                <h3>Shadow Exercises</h3>
+                <p>Practical workshops and digital tools designed to conduct the "Sacred Drop" and reclaim your power.</p>
+            </div>
         </div>
     </section>
 
-    <section class="newsletter" id="join">
-        <h2>Step into the Light</h2>
-        <p>Receive weekly insights on building your "Freedom Fund" and setting boundaries.</p>
-        <form>
-            <input type="email" placeholder="Your Best Email" required><br>
-            <button type="submit" class="cta-btn" style="border:none; cursor:pointer;">Subscribe to the Manifest</button>
-        </form>
+    <section id="book">
+        <div class="book-img">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1887&auto=format&fit=crop" alt="E-book Cover">
+        </div>
+        <div class="book-content">
+            <h2>The Signature Reveal</h2>
+            <p>My manifesto is written from the trenches of transformation. It’s a roadmap for every woman ready to shed the weight of societal expectations and step into her inherent light.</p>
+            <p><strong>Coming Soon:</strong> Pre-order your digital copy and start your journey beyond the shadows.</p>
+            <a href="mailto:your-email@example.com" class="btn">Inquire for Pre-order</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Step Into the Light</h2>
+        <p>Ready to reclaim your story? Let's connect.</p>
+        <a href="mailto:your-email@example.com" class="btn" style="background: white; color: var(--dark);">Email Me</a>
+        <div style="margin-top: 40px;">
+            <a href="#" style="color: var(--gold); margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--gold); margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-tiktok"></i></a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Beyond the Shadows. Follow the journey on Instagram @BeyondTheShadows</p>
-        <p><em>The pen is in your hand. The page is blank. Go now.</em></p>
+        <p>&copy; 2024 BEYOND THE SHADOWS. ALL RIGHTS RESERVED.</p>
+        <p><i>The pen is in your hand. The page is blank.</i></p>
     </footer>
 
 </body>
